@@ -53,15 +53,15 @@ gem5_repo = Artifact.registerArtifact(
     documentation = 'cloned gem5 from the google repository using branch release-staging-v20.0.0.0'
 )
 
-# m5_binary = Artifact.registerArtifact(
-#     command = 'scons build/x86/out/m5',
-#     typ = 'binary',
-#     name = 'm5',
-#     path =  'gem5/util/m5/build/x86/out/m5',
-#     cwd = 'gem5/util/m5',
-#     inputs = [gem5_repo,],
-#     documentation = 'm5 utility'
-# )
+m5_binary = Artifact.registerArtifact(
+    command = 'scons build/x86/out/m5',
+    typ = 'binary',
+    name = 'm5',
+    path =  'gem5/util/m5/build/x86/out/m5',
+    cwd = 'gem5/util/m5',
+    inputs = [gem5_repo,],
+    documentation = 'm5 utility'
+)
 
 disk_image = Artifact.registerArtifact(
     command = './packer build parsec/parsec.json',
